@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  randomx-service:
+    image: lchaia/randomx-service
+    container_name: randomx-service
+    build:
+        context: ./src
+    ports:
+        - 39093:39093
+    command: "-host 0.0.0.0 -log -threads 4 -origin http://localhost:4200"
